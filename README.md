@@ -26,3 +26,26 @@ Here's where the magic happens! The "Speech to Text" feature allows you to speak
 Enjoy the convenience and efficiency of manipulating and interacting with text as needed.
 ## Technologies Used
 This app is built using modern web technology i.e. React. The speech recognition functionality for "Speech to Text" is powered by an npm package 'react-speech-recognition'.
+## Deployment
+ Deployed and hosted a highly available react application using Amazon Ec2 and VPC.
+ ![AWS Logo](./public/aws.jpg)
+
+Here are the general steps which I followed:
+
+1. Launch an EC2 instance with your preferred configuration and security groups.
+
+2. SSH into your EC2 instance.
+
+3. Clone your project repository to the instance.
+
+4. Install Node.js and npm if not already installed.
+
+5. Install project dependencies and build the application.
+
+6. Set up a web server (e.g., Nginx or Apache) to serve your React application.
+
+7. Ensure your instance's security groups allow traffic on the necessary ports (e.g., 3000).
+
+8. Point your domain or Elastic IP to your EC2 instance.
+
+9. Start the web server and access your application via the instance's public IP or domain.
