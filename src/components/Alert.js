@@ -8,7 +8,7 @@ const Alert = (props) => {
     }
 
     return (
-        props.alert && <div className={`alert alert-${(props.alert.type)} alert-dismissible fade show`} role="alert">
+        props.alert && <div className={`mx-5 px-5 alert alert-${(props.alert.type)} alert-dismissible fade show`} role="alert">
             <strong>{convertTitle(props.alert.type)}</strong>: {props.alert.msg}
         </div>
     )

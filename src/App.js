@@ -17,13 +17,13 @@ function App() {
     }, 1500);
   }
   return (
-    <>
+    <div className='mt-4'>
       <Navbar title='TextUtils' />
       <Alert alert={alert} />
       <div className="container">
         <TextForm showAlert={showAlert} heading="Enter Your Text To Analyze" size="12" />
       </div>
-    </>
+    </div>
   );
 }
 

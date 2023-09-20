@@ -63,6 +63,7 @@ const TextForm = (props) => {
     
     const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition({ commands });
     const speechToText = () => {
+        props.showAlert('Say "STOP" to get your text into the Textarea!', 'info');
         SpeechRecognition.startListening({ continuous: true, language: 'en-IN' })
         if (!browserSupportsSpeechRecognition) {
             return null
@@ -71,10 +72,10 @@ const TextForm = (props) => {
 
     return (
         <>
-            <div className="mb-3 my-3">
+            <>
                 <h2>{props.heading}</h2>
                 <textarea style={styleComponent} className="form-control" autoFocus placeholder='Enter text here' value={text} onChange={textHandler} id="mybox" rows={props.size}></textarea>
-            </div>
+            </>
             <div className="container">
                 <button className='btn btn-primary mx-1 my-1' onClick={convertToUpparCase}>Convert to UpparCase</button>
                 <button className='btn btn-primary mx-1 my-1' onClick={convertToLowerCase}>Convert to LowerCase</button>
@@ -82,7 +83,6 @@ const TextForm = (props) => {
                 <button className='btn btn-primary mx-1 my-1' onClick={copyText}>Copy Text</button>
                 <button className='btn btn-primary mx-1 my-1' onClick={clearText}>Clear</button>
                 <button className='btn btn-primary mx-1 my-1' onClick={speechToText}>SpeechToText</button>
-                {voice && <h5>Say <span style={{color:'red'}}>"STOP"</span> to get your text into the Textarea!</h5>}
             </div>
             <div className="container">
                 <h1 className='my-3'>Your Text Summary</h1>
